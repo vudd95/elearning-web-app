@@ -1,18 +1,7 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
 import "./globals.css";
-
-const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"] });
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+import { manrope } from "@/utils/font";
+import Sidebar from "@/components/layouts/Sidebar";
 
 export const metadata: Metadata = {
   title: "ELearning Web App",
@@ -26,7 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.className} antialiased`}>{children}</body>
+      <body className={`${manrope.className}`}>
+        <div className="wrapper grid grid-cols-[300px,minmax(0,1fr)] h-screen">
+          <Sidebar />
+          <main>{children}</main>
+        </div>
+      </body>
     </html>
   );
 }
