@@ -1,11 +1,6 @@
 import IconExplore from "@/components/icons/IconExplore";
 import IconPlay from "@/components/icons/IconPlay";
-
-export interface IMenuItemProps {
-  url: string;
-  title: string;
-  icon: React.ReactNode;
-}
+import { IMenuItemProps } from "@/types";
 
 export const menuList: IMenuItemProps[] = [
   {

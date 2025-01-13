@@ -1,12 +1,14 @@
 import Link from "next/link";
 import React from "react";
-import { IMenuItemProps, menuList } from "@/constants/menuList";
+import { menuList } from "@/constants/menuList";
+import ActiveLink from "../common/ActiveLink";
+import { IMenuItemProps } from "@/types";
 
 const Sidebar = () => {
   return (
     <div className="p-5 border-r border-r-gray-200">
       <Link href="/" className="logo font-bold text-3xl inline-block mb-10">
-        Ucademy
+        <span className="text-primary">U</span>cademy
       </Link>
       <ul>
         {menuList.map((item) => (
@@ -25,14 +27,10 @@ const Sidebar = () => {
 function MenuItem({ url = "/", title = "", icon }: IMenuItemProps) {
   return (
     <li>
-      <Link
-        href={url}
-        prefetch
-        className="p-3 rounded-md flex items-center gap-3 hover:text-primary hover:bg-primary hover:bg-opacity-10 transition-all"
-      >
+      <ActiveLink url={url}>
         {icon}
         {title}
-      </Link>
+      </ActiveLink>
     </li>
   );
 }
