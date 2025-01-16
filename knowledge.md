@@ -17,3 +17,19 @@
 - Search Params:
 
 # Layout
+
+# Image: next/image
+
+- Image yêu cầu 3 thuộc tính là src, alt, width height
+- Nếu sử dụng thuộc tính fill thì không cần width và height. Tuy nhiên thẻ image sẽ trở thành absolute cho nên cần có 1 phần tử chứa nó sử dụng thuộc tính position: relative tuỳ vào mục đích code
+- Khi sử dụng src từ bên ngoài thì phải thiết lâpj trong next.config.ts
+  `images: {
+  remotePatterns: [
+    {
+      protocol: "https",
+      hostname: "images.unsplash.com",
+      port: "",
+      pathname: "/**",
+    },
+  ],
+},`

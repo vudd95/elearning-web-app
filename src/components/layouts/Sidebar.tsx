@@ -6,7 +6,7 @@ import { IMenuItemProps } from "@/types";
 
 const Sidebar = () => {
   return (
-    <div className="p-5 border-r border-r-gray-200">
+    <div className="p-5 border-r border-r-gray-200 bg-white">
       <Link href="/" className="logo font-bold text-3xl inline-block mb-10">
         <span className="text-primary">U</span>cademy
       </Link>
