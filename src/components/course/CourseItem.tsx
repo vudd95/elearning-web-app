@@ -6,8 +6,22 @@ import IconStar from "../icons/IconStar";
 import IconClock from "../icons/IconClock";
 
 const CourseItem = () => {
+  const courseInfo = [
+    {
+      title: "2000",
+      icon: (className?: string) => <IconEye className={className} />,
+    },
+    {
+      title: "5.0",
+      icon: (className?: string) => <IconStar className={className} />,
+    },
+    {
+      title: "30p59",
+      icon: (className?: string) => <IconClock className={className} />,
+    },
+  ];
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-4">
+    <div className="bg-white dark:bg-grayDarker border border-gray-200 dark:border-opacity-10 rounded-2xl p-4">
       {/* image */}
       <Link href={"/"} className="block h-[180px] relative">
         <Image
@@ -26,23 +40,20 @@ const CourseItem = () => {
         </span>
       </Link>
       {/* couse details */}
-      <div className="py-4">
+      <div className="pt-4">
         <h3 className="text-lg mb-5 font-bold">
           Học Nextjs, tự làm ra sản phẩm từ A-{">"}Z hoàn chỉnh
         </h3>
-        <div className="flex items-center gap-3 mb-5 text-xs text-gray-500">
-          <div className="flex items-center gap-2">
-            <IconEye className="size-4" />
-            <span>1000</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <IconStar className="size-4" />
-            <span>5.0</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <IconClock className="size-4" />
-            <span>30h15p</span>
-          </div>
+        <div className="flex items-center gap-3 mb-5 text-xs dark:text-grayDark">
+          {courseInfo.map((item, index) => (
+            <div
+              className="flex items-center gap-1"
+              key={`${item.title} ${index}`}
+            >
+              {item.icon("size-4")}
+              <span>{item.title}</span>
+            </div>
+          ))}
           <span className="font-semibold text-primary ml-auto text-base">
             888.000
           </span>

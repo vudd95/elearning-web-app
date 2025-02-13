@@ -12,12 +12,12 @@ const ActiveLink = ({ url, children }: IActiveLinkProps) => {
       href={url}
       prefetch
       className={clsx(
-        "p-3 rounded-md flex items-center gap-3 transition-all",
+        "p-3 rounded-md flex items-center gap-3 dark:text-grayDark transition-all",
         {
-          "text-white bg-primary svg-animate": url === pathName,
+          "!text-white bg-primary svg-animate": url === pathName,
         },
         {
-          "hover:text-primary hover:bg-primary hover:bg-opacity-10":
+          "hover:!text-primary hover:!bg-primary hover:!bg-opacity-10":
             url !== pathName,
         }
       )}

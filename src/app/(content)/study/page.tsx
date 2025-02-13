@@ -1,7 +1,19 @@
+import CourseGrid from "@/components/common/CourseGrid";
+import CourseItem from "@/components/course/CourseItem";
+import Heading from "@/components/typography/Heading";
 import React from "react";
 
 const page = () => {
-  return <div>Khu vuc hoc tap</div>;
+  return (
+    <>
+      <Heading>Khu vực học tập</Heading>
+      <CourseGrid>
+        <CourseItem />
+        <CourseItem />
+        <CourseItem />
+      </CourseGrid>
+    </>
+  );
 };
 
 export default page;
